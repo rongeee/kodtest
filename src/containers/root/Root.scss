@@ -8,4 +8,9 @@ body {
 .content {
   margin: 0 auto;
   max-width: 1000px;
+  display: grid;
+
+  @media (min-width: 550px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }

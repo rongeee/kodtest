@@ -1,0 +1,127 @@
+.product-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(220px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1em;
+  margin: 0 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2em 0;
+}
+
+@media (min-width: 900px) {
+  .product-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: row;
+  margin: 0 auto;
+  gap: 1em;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 1em;
+}
+
+@media (min-width: 900px) {
+  .product-card {
+    grid-auto-flow: column;
+    -ms-grid-columns: auto 4fr 1fr 1fr;
+        grid-template-columns: auto 4fr 1fr 1fr;
+    width: 70%;
+    max-width: 1200px;
+  }
+}
+
+.product-card__name {
+  font-size: 1.5rem;
+}
+
+.product-card__rating {
+  font-size: 24px;
+  color: #dada00;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .product-card__rating {
+    text-align: left;
+  }
+}
+
+.product-card__image {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 200px;
+  width: 200px;
+}
+
+.product-card__price-container {
+  justify-self: end;
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (min-width: 900px) {
+  .product-card__price-container {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+.product-card__price {
+  margin-right: 5px;
+}
+
+.product-card__btn-container {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+@media (min-width: 900px) {
+  .product-card__btn-container {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+.product-card__btn {
+  border-color: #179599;
+  background: #179599 50%;
+  color: #fff;
+  -webkit-transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  border-radius: 4px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  height: 44px;
+  white-space: nowrap;
+}
+
+.product-card__btn:hover {
+  border-color: #0d696c;
+  cursor: pointer;
+  background: #0d696c radial-gradient(circle, transparent 1%, #179599 0) 50%/15000%;
+  color: #fff;
+}
+/*# sourceMappingURL=productcard.css.map */

@@ -1,4 +1,4 @@
 export const getCategoryList = async () => {
-  let data = require("../../../assets/mobile.json");
-  return data;
+  let data = await require("../../../assets/mobile.json");
+  return await data;
 };

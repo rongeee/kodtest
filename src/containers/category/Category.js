@@ -1,19 +1,37 @@
 import React, { Component } from "react";
 import { getCategoryList } from "./state/category";
+import { getProductImageLink } from "../../utils/imageUtils";
+import Productcard from "./productcard/productcard";
 import "./Category.scss";
 
 export default class Category extends Component {
   state = { category: {} };
-  async componentDidMount() {
-    const loadedData = await getCategoryList();
-    this.setState({ category: loadedData });
+
+  componentDidMount() {
+    getCategoryList().then(data => {
+      this.setState({ category: data });
+    });
   }
 
   render() {
-    /*
-     * You can get the category data from the category state:
-     * const { category } = this.state;
-     */
-    return <div className="product-list"></div>;
+    const { products } = this.state.category;
+
+    if (products) {
+      return products.map(prod => {
+        return (
+          <Productcard
+            name={prod.name}
+            desc={prod.description}
+            url={prod.url}
+            img={getProductImageLink(prod)}
+            price={prod.cheapestPrice.amount}
+            currency={prod.cheapestPrice.currency}
+            rating={prod.rating.averageRating}
+          />
+        );
+      });
+    }
+
+    return <div></div>;
   }
 }

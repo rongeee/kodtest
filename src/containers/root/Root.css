@@ -22,5 +22,14 @@ body {
 .content {
   margin: 0 auto;
   max-width: 1000px;
+  display: -ms-grid;
+  display: grid;
+}
+
+@media (min-width: 550px) {
+  .content {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 /*# sourceMappingURL=Root.css.map */
