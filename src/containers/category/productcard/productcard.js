@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./productcard.scss";
 
 export default class Productcard extends Component {
-  renderRating() {
+  renderRatingStars() {
     let rating = Math.round(this.props.rating);
     let ratingArr = [];
 
@@ -21,7 +21,10 @@ export default class Productcard extends Component {
         <div className="product-card__text">
           <h2 className="product-card__name">{this.props.name}</h2>
           <p className="product-card__desc">{this.props.desc}</p>
-          <div className="product-card__rating">{this.renderRating()}</div>
+          <div className="product-card__rating">
+            {this.renderRatingStars()}{" "}
+            <p className="product-card__rating-text">{this.props.rating}</p>
+          </div>
         </div>
         <div className="product-card__price-container">
           <div className="product-card__price-container">

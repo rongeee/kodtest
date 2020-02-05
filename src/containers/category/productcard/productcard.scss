@@ -2,9 +2,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1em;
-  margin: 0 1em;
   justify-content: center;
-  padding: 2em 0;
+  margin: 1em 0;
+  padding: 2em;
 
   // @media (min-width: 550px) {
   //   padding: 1em;
@@ -26,9 +26,9 @@
 
   @media (min-width: 900px) {
     grid-auto-flow: column;
-    grid-template-columns: auto 4fr 1fr 1fr;
-    width: 70%;
-    max-width: 1200px;
+    grid-template-columns: auto 3fr 1fr 1fr;
+    max-width: 1100px;
+    padding: 0;
   }
 
   &__name {
@@ -38,17 +38,41 @@
   &__rating {
     font-size: 24px;
     color: rgb(218, 218, 0);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (min-width: 900px) {
-      text-align: left;
+      justify-content: flex-start;
     }
+  }
+
+  &__rating-text {
+    color: black;
+    margin: 0 6px;
+    font-size: 14px;
+
+    // Fix for ascii stars that are not centered due to the actual ascii-symbol.
+    margin-top: 4px;
   }
 
   &__image {
     justify-self: center;
-    height: 200px;
-    width: 200px;
+    max-height: 200px;
+    max-width: 200px;
+    width: 100%;
+    object-fit: contain;
+
+    @media (min-width: 900px) {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 1em;
+    }
+
+    & > img {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &__price-container {
@@ -57,13 +81,14 @@
     display: flex;
     flex-direction: row;
 
+    & > p {
+      margin: 0 3px;
+    }
+
     @media (min-width: 900px) {
       align-self: center;
+      justify-self: center;
     }
-  }
-
-  &__price {
-    margin-right: 5px;
   }
 
   &__btn-container {
