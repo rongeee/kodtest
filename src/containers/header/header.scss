@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  height: 60px;
+  background-color: #207a88;
+  font-size: 15px;
+  position: relative;
+  color: white;
+
+  &__name {
+    font-size: 10px;
+    align-self: flex-start;
+    left: 1em;
+    margin-top: -1em;
+    position: absolute;
+  }
+}
